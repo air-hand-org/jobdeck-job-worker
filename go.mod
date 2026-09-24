@@ -1,4 +1,4 @@
-module jobdeck/services/job-worker
+module github.com/air-hand-org/jobdeck-job-worker
 
 go 1.26.4
 
