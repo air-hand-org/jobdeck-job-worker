@@ -1,0 +1,15 @@
+services:
+  target:
+    image: busybox:1.37.0
+    command: ["sh", "-c", "mkdir -p /www && printf ok > /www/index.html && exec httpd -f -p 8080 -h /www"]
+
+  denied:
+    image: busybox:1.37.0
+    command: ["sh", "-c", "mkdir -p /www && printf denied > /www/index.html && exec httpd -f -p 8080 -h /www"]
+
+  forward-proxy:
+    image: ${FORWARD_PROXY_IMAGE:?FORWARD_PROXY_IMAGE must be set}
+    environment:
+      SQUID_ALLOWED_DEMO_HOST_AND_PORT: target:8080
+    ports:
+      - "127.0.0.1::3128"

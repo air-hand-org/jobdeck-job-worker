@@ -17,3 +17,8 @@ container-build-other:
 	@cd $(CONTAINER_MK_DIR)../containers/forward-proxy \
 	&& docker build . \
 	;
+
+.PHONY: forward-proxy-integration-test
+forward-proxy-integration-test:
+	@cd $(CONTAINER_MK_DIR)../ \
+	&& FORWARD_PROXY_IMAGE=jobdeck-forward-proxy:test sh ./tests/forward-proxy/run.sh
