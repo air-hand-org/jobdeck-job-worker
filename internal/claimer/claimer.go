@@ -3,9 +3,10 @@ package claimer
 
 import (
 	"context"
-	"jobdeck/services/job-worker/internal/app"
 	"log/slog"
 	"time"
+
+	"github.com/air-hand-org/jobdeck-job-worker/internal/app"
 
 	jobv1 "github.com/air-hand-org/api-contracts/packages/jobdeck/job/go/v1"
 	"go.opentelemetry.io/otel"

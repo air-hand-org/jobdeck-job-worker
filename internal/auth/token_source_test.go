@@ -2,7 +2,7 @@ package auth
 
 import (
 	"context"
-	"jobdeck/services/job-worker/internal/transport/interceptor"
+	"github.com/air-hand-org/jobdeck-job-worker/internal/transport/interceptor"
 	"testing"
 	"time"
 

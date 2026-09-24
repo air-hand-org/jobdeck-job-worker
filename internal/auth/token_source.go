@@ -3,8 +3,9 @@ package auth
 
 import (
 	"context"
-	"jobdeck/services/job-worker/internal/transport/interceptor"
 	"time"
+
+	"github.com/air-hand-org/jobdeck-job-worker/internal/transport/interceptor"
 
 	authv1 "github.com/air-hand-org/api-contracts/packages/jobdeck/auth/go/v1"
 	"github.com/cockroachdb/errors"
