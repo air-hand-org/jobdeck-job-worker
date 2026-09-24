@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	authv1 "github.com/air-hand-org/api-contracts/packages/jobdeck/auth/go/v1"
+	authv1 "github.com/air-hand-org/api-contracts/packages/jobdeck/auth/go/proto/v1"
 	"github.com/stretchr/testify/require"
 	"google.golang.org/grpc"
 )
