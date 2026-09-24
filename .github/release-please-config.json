@@ -1,4 +1,5 @@
 {
+  "bootstrap-sha": "8fb00cda692ce5a25728b1b0a6",
   "packages": {
     ".": {
       "release-type": "go",
