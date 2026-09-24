@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.6](https://github.com/air-hand-org/jobdeck-job-worker/compare/v1.2.5...v1.2.6) (2026-09-24)
+
+
+### Bug Fixes
+
+* rename proto package ([#7](https://github.com/air-hand-org/jobdeck-job-worker/issues/7)) ([af80359](https://github.com/air-hand-org/jobdeck-job-worker/commit/af80359c48b1e06125445d88233c2448872aef23))
+
 ## [1.2.5](https://github.com/air-hand-org/jobdeck-job-worker/compare/v1.2.4...v1.2.5) (2026-09-24)
 
 
