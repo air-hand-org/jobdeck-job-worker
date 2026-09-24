@@ -71,7 +71,8 @@ jobs:
             cache-to: type=gha,mode=max,scope=job-worker
             secrets: |
               github_contents_token=${{ steps.app-token.outputs.token }}
-      # TODO: integration-test
+      - name: Test forward-proxy allow and deny
+        run: make forward-proxy-integration-test
 
   publish:
     if: ${{ inputs.push == true }}
