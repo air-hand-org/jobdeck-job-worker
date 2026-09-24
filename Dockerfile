@@ -3,8 +3,7 @@
 FROM golang:1.26.4-bookworm AS build
 WORKDIR /src
 
-# The services use the repository Go workspace to resolve generated protobuf code.
-COPY . .
+COPY go.mod go.sum ./
 RUN --mount=type=secret,id=github_contents_token \
     --mount=type=cache,target=/go/pkg/mod,id=jobdeck-go-mod \
     --mount=type=cache,target=/root/.cache/go-build,id=jobdeck-go-build \
@@ -12,7 +11,13 @@ RUN --mount=type=secret,id=github_contents_token \
     GIT_CONFIG_COUNT=1 \
     GIT_CONFIG_KEY_0="url.https://x-access-token:$(cat /run/secrets/github_contents_token)@github.com/.insteadOf" \
     GIT_CONFIG_VALUE_0="https://github.com/" \
-    CGO_ENABLED=0 go build -trimpath -ldflags='-s -w' -o /out/job-worker ./services/job-worker/cmd/worker
+    go mod download
+
+COPY cmd ./
+COPY internal ./
+RUN --mount=type=cache,target=/go/pkg/mod,id=jobdeck-go-mod \
+    --mount=type=cache,target=/root/.cache/go-build,id=jobdeck-go-build \
+    CGO_ENABLED=0 go build -trimpath -ldflags='-s -w' -o /out/job-worker ./cmd/worker
 
 FROM gcr.io/distroless/base-debian12:nonroot
 COPY --from=build /out/job-worker /job-worker
