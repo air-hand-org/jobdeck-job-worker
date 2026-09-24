@@ -8,7 +8,7 @@ import (
 
 	"github.com/air-hand-org/jobdeck-job-worker/internal/app"
 
-	jobv1 "github.com/air-hand-org/api-contracts/packages/jobdeck/job/go/v1"
+	jobv1 "github.com/air-hand-org/api-contracts/packages/jobdeck/job/go/proto/v1"
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/trace"
