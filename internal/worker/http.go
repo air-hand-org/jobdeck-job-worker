@@ -5,11 +5,12 @@ import (
 	"bytes"
 	"context"
 	"io"
-	"jobdeck/services/job-worker/internal/app"
 	"net"
 	"net/http"
 	"net/url"
 	"os"
+
+	"github.com/air-hand-org/jobdeck-job-worker/internal/app"
 
 	jobv1 "github.com/air-hand-org/api-contracts/packages/jobdeck/job/go/v1"
 	"github.com/cockroachdb/errors"

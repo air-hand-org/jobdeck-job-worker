@@ -7,13 +7,13 @@ setup:
 	@aqua i && mise i
 
 .PHONY: build
-build: go-build cs-build
+build: go-build
 
 .PHONY: fmt
-fmt: go-fmt cs-fmt tofu-fmt
+fmt: go-fmt
 
 .PHONY: lint
-lint: go-lint cs-lint
+lint: go-lint
 
 .PHONY: check-clean
 check-clean:
@@ -21,8 +21,4 @@ check-clean:
 	@test -z "$$(git status --porcelain)"
 
 .PHONY: test
-test: node-test go-test cs-test
-
-.PHONY: node-test
-node-test:
-	@node .github/scripts/normalize-image-promotion-payload.test.js
+test: go-test

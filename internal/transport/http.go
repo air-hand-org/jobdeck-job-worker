@@ -3,10 +3,11 @@ package transport
 
 import (
 	"fmt"
-	"jobdeck/services/job-worker/internal/app"
-	"jobdeck/services/job-worker/internal/transport/handlers"
-	"jobdeck/services/job-worker/internal/transport/verification"
 	"net/http"
+
+	"github.com/air-hand-org/jobdeck-job-worker/internal/app"
+	"github.com/air-hand-org/jobdeck-job-worker/internal/transport/handlers"
+	"github.com/air-hand-org/jobdeck-job-worker/internal/transport/verification"
 )
 
 func newHTTPHandler(pushUsecase *app.PushUsecase, verifier verification.Verifier) *http.ServeMux {

@@ -4,10 +4,11 @@ package handlers
 import (
 	"encoding/json"
 	"fmt"
-	"jobdeck/services/job-worker/internal/app"
-	"jobdeck/services/job-worker/internal/transport/verification"
 	"log/slog"
 	"net/http"
+
+	"github.com/air-hand-org/jobdeck-job-worker/internal/app"
+	"github.com/air-hand-org/jobdeck-job-worker/internal/transport/verification"
 
 	"cloud.google.com/go/pubsub/v2"
 	jobv1 "github.com/air-hand-org/api-contracts/packages/jobdeck/job/go/v1"
