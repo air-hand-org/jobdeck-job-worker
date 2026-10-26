@@ -7,8 +7,7 @@ container-build: container-build-go container-build-other
 .PHONY: container-build-go
 container-build-go:
 	@cd $(CONTAINER_MK_DIR)../ \
-	&& GITHUB_CONTENTS_TOKEN="$$(gh auth token)" docker build \
-		--secret id=github_contents_token,env=GITHUB_CONTENTS_TOKEN \
+	&& docker build \
 		. \
 	;
 
