@@ -1,5 +1,7 @@
 FROM ubuntu/squid:7.2-26.04_edge
 
+COPY LICENSE /usr/share/doc/jobdeck-forward-proxy/LICENSE
+
 COPY squid.conf.template /etc/squid/squid.conf.template
 COPY --chmod=755 entrypoint.sh /usr/local/bin/jobdeck-entrypoint.sh
 
