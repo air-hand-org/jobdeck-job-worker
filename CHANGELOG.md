@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.7](https://github.com/air-hand-org/jobdeck-job-worker/compare/v1.2.6...v1.2.7) (2026-10-26)
+
+
+### Bug Fixes
+
+* **build:** package project and third-party licenses ([#12](https://github.com/air-hand-org/jobdeck-job-worker/issues/12)) ([e505ce5](https://github.com/air-hand-org/jobdeck-job-worker/commit/e505ce5c3399c8dece475c45dac55e9afa8621e1))
+
 ## [1.2.6](https://github.com/air-hand-org/jobdeck-job-worker/compare/v1.2.5...v1.2.6) (2026-09-24)
 
 
