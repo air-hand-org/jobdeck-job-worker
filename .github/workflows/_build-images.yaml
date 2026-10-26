@@ -59,6 +59,20 @@ jobs:
             tags: jobdeck-job-worker:test
             cache-from: type=gha,scope=job-worker
             cache-to: type=gha,mode=max,scope=job-worker
+      - name: Verify packaged license documents
+        shell: bash
+        run: |
+          set -euo pipefail
+          output=$(mktemp -d)
+          worker=$(docker create jobdeck-job-worker:test)
+          proxy=$(docker create jobdeck-forward-proxy:test)
+          trap 'docker rm "$worker" "$proxy"; rm -rf "$output"' EXIT
+          docker cp "$worker:/LICENSE" "$output/LICENSE"
+          docker cp "$worker:/third_party" "$output/third_party"
+          cmp LICENSE "$output/LICENSE"
+          diff -r third_party/licenses/linux-amd64 "$output/third_party"
+          docker cp "$proxy:/usr/share/doc/jobdeck-forward-proxy/LICENSE" "$output/proxy-LICENSE"
+          cmp LICENSE "$output/proxy-LICENSE"
       - name: Test forward-proxy allow and deny
         run: make forward-proxy-integration-test
 
