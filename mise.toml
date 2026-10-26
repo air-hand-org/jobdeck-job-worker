@@ -3,7 +3,3 @@ go = "1.26.4"
 
 [env]
 GOWORK = "off"
-GOPRIVATE = "github.com/air-hand-org/api-contracts"
-GITHUB_ACTOR = {
-    default = '''{{ exec(command="gh auth status --hostname github.com --json hosts --jq '.hosts[][] | select(.active) | .login'") }}''',
-}
