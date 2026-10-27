@@ -7,7 +7,7 @@ replace google.golang.org/genproto v0.0.0-20230410155749-daa745c078e1 => google.
 
 require (
 	cloud.google.com/go/pubsub/v2 v2.8.0
-	github.com/air-hand-org/api-contracts/packages/jobdeck/auth v1.3.2
+	github.com/air-hand-org/api-contracts/packages/jobdeck/auth v1.4.1
 	github.com/air-hand-org/api-contracts/packages/jobdeck/job v1.2.2
 	github.com/cockroachdb/errors v1.14.0
 	github.com/stretchr/testify v1.12.1
@@ -22,7 +22,7 @@ require (
 )
 
 require (
-	buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go v1.36.11-20260415201107-50325440f8f2.1 // indirect
+	buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go v1.36.12-20260825204119-511051f7f437.2 // indirect
 	cloud.google.com/go v0.123.0 // indirect
 	cloud.google.com/go/auth v0.20.0 // indirect
 	cloud.google.com/go/auth/oauth2adapt v0.2.8 // indirect
