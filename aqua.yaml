@@ -13,4 +13,3 @@ registries:
 packages:
 - name: golangci/golangci-lint@v2.12.2
 - name: matryer/moq@v0.7.1
-- name: shellspec/shellspec@0.28.1
