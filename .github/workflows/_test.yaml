@@ -15,14 +15,34 @@ jobs:
     permissions:
       contents: read
     runs-on: ubuntu-latest
+    env:
+      ARTIFACT_ELIGIBLE: ${{ github.event_name == 'pull_request' && github.event.pull_request.user.login == 'renovate[bot]' && github.event.pull_request.head.repo.full_name == github.repository }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
+          # Generate from the actual Renovate head, not its synthetic merge commit.
+          ref: ${{ case(env.ARTIFACT_ELIGIBLE == 'true', github.event.pull_request.head.sha, github.sha) }}
       - uses: air-hand-org/jobdeck-actions/actions/setup-tools@v1.3.0
       - uses: air-hand-org/jobdeck-actions/actions/cache-go@v1.4.1
       - name: build
         run: make build
+      - name: validate generated license scope
+        env:
+          ELIGIBLE: ${{ env.ARTIFACT_ELIGIBLE }}
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: bash .github/scripts/validate-renovate-licenses.sh
+      - name: update generated licenses
+        uses: air-hand-org/jobdeck-actions/actions/auto-commit@1d9ce1953c373273f28cac191bcf5ff0fc58100d # v1.7.0
+        with:
+          eligible: ${{ env.ARTIFACT_ELIGIBLE }}
+          paths: |
+            third_party/licenses/linux-amd64
+          expected-head: ${{ github.event.pull_request.head.sha }}
+          head-branch: ${{ github.event.pull_request.head.ref }}
+          repository: ${{ github.event.repository.name }}
+          app-client-id: ${{ vars.GH_APP_RELEASE_CLIENT_ID }}
+          app-private-key: ${{ secrets.GH_APP_RELEASE_PRIVATE_KEY }}
       - name: lint
         run: make lint
       - name: check clean
