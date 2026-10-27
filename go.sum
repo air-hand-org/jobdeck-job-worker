@@ -16,8 +16,8 @@ cloud.google.com/go/pubsub/v2 v2.8.0/go.mod h1:OUQLW4ZkmJ0lVvXpP+2Kk0acWWO2pTg5n
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
 github.com/air-hand-org/api-contracts/packages/jobdeck/auth v1.4.1 h1:khZY0hKubpi/hZZDsnKCoFMf5dID6F2g6Aqs2sMob4I=
 github.com/air-hand-org/api-contracts/packages/jobdeck/auth v1.4.1/go.mod h1:4AIsQqlCQ6uRj+eFbqHKMUOVjUKL5yfdY3PjJPLTWhk=
-github.com/air-hand-org/api-contracts/packages/jobdeck/job v1.2.2 h1:NtTi/dzRxykcHrj3klm7a95OEKCBetpFnT9Qx8xdcgI=
-github.com/air-hand-org/api-contracts/packages/jobdeck/job v1.2.2/go.mod h1:EUd3D88tVeGvF+d0ZNZgx2z3xkCsuKUxSaPJpwRzYX8=
+github.com/air-hand-org/api-contracts/packages/jobdeck/job v1.3.0 h1:Oj/9EcghgbZtR5PjEhpjbz+7eBoFjgtj+osJ5ft+4bA=
+github.com/air-hand-org/api-contracts/packages/jobdeck/job v1.3.0/go.mod h1:kvevb83mxn8jPBR80hkS8UVpkKnsB9JC0UN0ZvsKyD8=
 github.com/cenkalti/backoff/v5 v5.0.3 h1:ZN+IMa753KfX5hd8vVaMixjnqRZ3y8CuJKRKj1xcsSM=
 github.com/cenkalti/backoff/v5 v5.0.3/go.mod h1:rkhZdG3JZukswDf7f0cwqPNk4K0sa+F97BxZthm/crw=
 github.com/census-instrumentation/opencensus-proto v0.2.1/go.mod h1:f6KPmirojxKA12rnyqOA5BBL4O983OfeGPqjHWSTneU=

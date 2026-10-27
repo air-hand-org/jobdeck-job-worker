@@ -8,7 +8,7 @@ replace google.golang.org/genproto v0.0.0-20230410155749-daa745c078e1 => google.
 require (
 	cloud.google.com/go/pubsub/v2 v2.8.0
 	github.com/air-hand-org/api-contracts/packages/jobdeck/auth v1.4.1
-	github.com/air-hand-org/api-contracts/packages/jobdeck/job v1.2.2
+	github.com/air-hand-org/api-contracts/packages/jobdeck/job v1.3.0
 	github.com/cockroachdb/errors v1.14.0
 	github.com/stretchr/testify v1.12.1
 	go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc v0.72.0
