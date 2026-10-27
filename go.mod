@@ -1,6 +1,6 @@
 module github.com/air-hand-org/jobdeck-job-worker
 
-go 1.26.4
+go 1.27.3
 
 // MEMO: monorithic genproto module refs by cockroachdb/errors
 replace google.golang.org/genproto v0.0.0-20230410155749-daa745c078e1 => google.golang.org/genproto v0.0.0-20260630182238-925bb5da69e7
