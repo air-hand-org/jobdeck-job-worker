@@ -104,7 +104,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Check whether image already exists
         id: image
-        uses: air-hand-org/jobdeck-actions/actions/image-exists@287f4026cd3c9245ccb7755f427ce5c8ebe75482 # v1.4.1
+        uses: air-hand-org/jobdeck-actions/actions/image-exists@1d9ce1953c373273f28cac191bcf5ff0fc58100d # v1.7.0
         with:
           image: ${{ env.ARTIFACT_REGISTRY_HOST }}/${{ vars.GCP_PROJECT_ID }}/jobdeck-job-worker/job-worker:${{ env.IMAGE_TAG }}
       - name: Build and push image
@@ -119,13 +119,13 @@ jobs:
           cache-to: type=gha,mode=max,scope=job-worker
       # Always check GHCR, including when a previous attempt already pushed to AR.
       - name: Copy image to GHCR if missing
-        uses: air-hand-org/jobdeck-actions/actions/copy-image@287f4026cd3c9245ccb7755f427ce5c8ebe75482 # v1.4.1
+        uses: air-hand-org/jobdeck-actions/actions/copy-image@1d9ce1953c373273f28cac191bcf5ff0fc58100d # v1.7.0
         with:
           src: ${{ env.ARTIFACT_REGISTRY_HOST }}/${{ vars.GCP_PROJECT_ID }}/jobdeck-job-worker/job-worker:${{ env.IMAGE_TAG }}
           dest: ghcr.io/${{ github.repository_owner }}/jobdeck-job-worker:${{ env.IMAGE_TAG }}
       - name: Check whether proxy image already exists
         id: image-proxy
-        uses: air-hand-org/jobdeck-actions/actions/image-exists@287f4026cd3c9245ccb7755f427ce5c8ebe75482 # v1.4.1
+        uses: air-hand-org/jobdeck-actions/actions/image-exists@1d9ce1953c373273f28cac191bcf5ff0fc58100d # v1.7.0
         with:
           image: ${{ env.ARTIFACT_REGISTRY_HOST }}/${{ vars.GCP_PROJECT_ID }}/jobdeck-forward-proxy/forward-proxy:${{ env.IMAGE_TAG }}
       - name: Build and push proxy image
@@ -140,7 +140,7 @@ jobs:
           cache-to: type=gha,mode=max,scope=forward-proxy
       # Always check GHCR, including when a previous attempt already pushed to AR.
       - name: Copy proxy image to GHCR if missing
-        uses: air-hand-org/jobdeck-actions/actions/copy-image@287f4026cd3c9245ccb7755f427ce5c8ebe75482 # v1.4.1
+        uses: air-hand-org/jobdeck-actions/actions/copy-image@1d9ce1953c373273f28cac191bcf5ff0fc58100d # v1.7.0
         with:
           src: ${{ env.ARTIFACT_REGISTRY_HOST }}/${{ vars.GCP_PROJECT_ID }}/jobdeck-forward-proxy/forward-proxy:${{ env.IMAGE_TAG }}
           dest: ghcr.io/${{ github.repository_owner }}/jobdeck-forward-proxy:${{ env.IMAGE_TAG }}
