@@ -4,6 +4,12 @@ on:
 permissions: {}
 
 jobs:
+  codeql:
+    uses: $/.github/workflows/_codeql.yaml
+    permissions:
+      contents: read
+      security-events: write
+
   # This nested reusable workflow owns test-only concurrency, so cancelling a
   # superseded test run never cancels this workflow's infrastructure plan.
   test:
