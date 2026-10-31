@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.9](https://github.com/air-hand-org/jobdeck-job-worker/compare/v1.2.8...v1.2.9) (2026-10-31)
+
+
+### Bug Fixes
+
+* **deps:** update module google.golang.org/grpc to v1.85.0 ([#43](https://github.com/air-hand-org/jobdeck-job-worker/issues/43)) ([ee9a999](https://github.com/air-hand-org/jobdeck-job-worker/commit/ee9a9997b376f3948edd1d8e86b0160cd088619a))
+
 ## [1.2.8](https://github.com/air-hand-org/jobdeck-job-worker/compare/v1.2.7...v1.2.8) (2026-10-27)
 
 
