@@ -3,6 +3,7 @@ x-proxy: &proxy
   ports:
     - "127.0.0.1::3128"
   networks:
+    - client
     - default
     - public-fixture
   extra_hosts:
@@ -42,6 +43,9 @@ services:
       SQUID_ALLOW_PRIVATE_DEMO: "true"
 
 networks:
+  # Docker internal bridges do not expose published ports on newer engines.
+  # Only proxies join this host-facing network; targets remain internal.
+  client: {}
   default:
     internal: true
   # Benchmark-only addresses simulate a non-private destination without Internet.
