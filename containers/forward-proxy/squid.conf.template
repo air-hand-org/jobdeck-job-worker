@@ -6,10 +6,10 @@ cache deny all
 acl demo dstdomain ${SQUID_ALLOWED_DEMO_HOST}
 acl demo_port port ${SQUID_ALLOWED_DEMO_PORT}
 
-acl www_google dstdomain www.google.com
-acl https_ports port 443
+# Local development only: permit RFC1918/ULA destinations for the configured demo.
+acl private_demo_dst dst 10.0.0.0/8 172.16.0.0/12 192.168.0.0/16 fc00::/7
 
-# deny local
+# Deny loopback, link-local and private destinations by default.
 acl forbidden_dst dst 0.0.0.0/8
 acl forbidden_dst dst 10.0.0.0/8
 acl forbidden_dst dst 127.0.0.0/8
@@ -20,7 +20,7 @@ acl forbidden_dst dst ::1
 acl forbidden_dst dst fc00::/7
 acl forbidden_dst dst fe80::/10
 
-http_access allow demo demo_port
+${SQUID_PRIVATE_DEMO_ACCESS}
 http_access deny forbidden_dst
-http_access allow www_google https_ports
+http_access allow demo demo_port
 http_access deny all

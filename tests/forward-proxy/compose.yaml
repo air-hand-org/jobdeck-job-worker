@@ -1,15 +1,56 @@
+x-proxy: &proxy
+  image: ${FORWARD_PROXY_IMAGE:?FORWARD_PROXY_IMAGE must be set}
+  ports:
+    - "127.0.0.1::3128"
+  networks:
+    - client
+    - default
+    - public-fixture
+  extra_hosts:
+    - "loopback.demo.test=127.0.0.1"
+    - "linklocal.demo.test=169.254.12.34"
+    - "unique-local.demo.test=fd00::1234"
+    - "linklocal-v6.demo.test=fe80::1234"
+    - "loopback-v6.demo.test=::1"
+    # Never contact Google: the former exception points at our isolated fixture.
+    - "www.google.com=198.18.0.10"
+
 services:
-  target:
+  public-target:
+    image: busybox:1.37.0
+    command: ["sh", "-c", "mkdir -p /www && printf ok > /www/index.html && httpd -p 443 -h /www && exec httpd -f -p 8080 -h /www"]
+    networks:
+      public-fixture:
+        ipv4_address: 198.18.0.10
+        aliases: [public.demo.test]
+
+  private-target:
     image: busybox:1.37.0
     command: ["sh", "-c", "mkdir -p /www && printf ok > /www/index.html && exec httpd -f -p 8080 -h /www"]
-
-  denied:
-    image: busybox:1.37.0
-    command: ["sh", "-c", "mkdir -p /www && printf denied > /www/index.html && exec httpd -f -p 8080 -h /www"]
+    networks:
+      default:
+        aliases: [private.demo.test, denied.test]
 
   forward-proxy:
-    image: ${FORWARD_PROXY_IMAGE:?FORWARD_PROXY_IMAGE must be set}
+    <<: *proxy
     environment:
-      SQUID_ALLOWED_DEMO_HOST_AND_PORT: target:8080
-    ports:
-      - "127.0.0.1::3128"
+      SQUID_ALLOWED_DEMO_HOST_AND_PORT: .demo.test:8080
+
+  local-forward-proxy:
+    <<: *proxy
+    environment:
+      SQUID_ALLOWED_DEMO_HOST_AND_PORT: .demo.test:8080
+      SQUID_ALLOW_PRIVATE_DEMO: "true"
+
+networks:
+  # Docker internal bridges do not expose published ports on newer engines.
+  # Only proxies join this host-facing network; targets remain internal.
+  client: {}
+  default:
+    internal: true
+  # Benchmark-only addresses simulate a non-private destination without Internet.
+  public-fixture:
+    internal: true
+    ipam:
+      config:
+        - subnet: 198.18.0.0/24
