@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.9](https://github.com/air-hand-org/jobdeck-job-worker/compare/v1.2.8...v1.2.9) (2026-11-03)
+
+
+### Bug Fixes
+
+* **deps:** update module google.golang.org/grpc to v1.85.0 ([#43](https://github.com/air-hand-org/jobdeck-job-worker/issues/43)) ([ee9a999](https://github.com/air-hand-org/jobdeck-job-worker/commit/ee9a9997b376f3948edd1d8e86b0160cd088619a))
+* **proxy:** enforce destination denies before demo access ([#46](https://github.com/air-hand-org/jobdeck-job-worker/issues/46)) ([93e84a7](https://github.com/air-hand-org/jobdeck-job-worker/commit/93e84a7af9f3e67f27e817e37da92f9d0050d9e8))
+
 ## [1.2.8](https://github.com/air-hand-org/jobdeck-job-worker/compare/v1.2.7...v1.2.8) (2026-10-27)
 
 
