@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.10](https://github.com/air-hand-org/jobdeck-job-worker/compare/v1.2.9...v1.2.10) (2026-11-06)
+
+
+### Bug Fixes
+
+* **deps:** update module github.com/air-hand-org/api-contracts/packages/jobdeck/job to v1.3.1 ([#47](https://github.com/air-hand-org/jobdeck-job-worker/issues/47)) ([fc50db2](https://github.com/air-hand-org/jobdeck-job-worker/commit/fc50db27398367a9000ac5af7242ccb3fac7334f))
+
 ## [1.2.9](https://github.com/air-hand-org/jobdeck-job-worker/compare/v1.2.8...v1.2.9) (2026-11-03)
 
 
