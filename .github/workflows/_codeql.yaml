@@ -24,7 +24,7 @@ jobs:
       - uses: air-hand-org/jobdeck-actions/actions/setup-tools@1d9ce1953c373273f28cac191bcf5ff0fc58100d # v1.7.0
         if: matrix.language == 'go'
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@9b3254085494b55a0f7c4c2b3d2d52cc712ce370 # v4.39.1
+        uses: github/codeql-action/init@1fc58d04a4d4374f921bdac573c3811c240f9c26 # v4.39.2
         with:
           languages: ${{ matrix.language }}
           build-mode: ${{ matrix.language == 'go' && 'manual' || 'none' }}
@@ -32,6 +32,6 @@ jobs:
         if: matrix.language == 'go'
         run: go build ./...
       - name: Analyze
-        uses: github/codeql-action/analyze@9b3254085494b55a0f7c4c2b3d2d52cc712ce370 # v4.39.1
+        uses: github/codeql-action/analyze@1fc58d04a4d4374f921bdac573c3811c240f9c26 # v4.39.2
         with:
           category: /language:${{ matrix.language }}
