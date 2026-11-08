@@ -26,7 +26,7 @@ func (c *authClientStub) AuthenticateLocalClient(_ context.Context, req *authv1.
 	return response, nil
 }
 
-func (c *authClientStub) ExchangeGoogleIdToken(context.Context, *authv1.ExchangeGoogleIdTokenRequest, ...grpc.CallOption) (*authv1.ExchangeGoogleIdTokenResponse, error) {
+func (c *authClientStub) ExchangeExternalToken(context.Context, *authv1.ExchangeExternalTokenRequest, ...grpc.CallOption) (*authv1.ExchangeExternalTokenResponse, error) {
 	return nil, nil
 }
 
