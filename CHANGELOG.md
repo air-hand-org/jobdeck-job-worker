@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.2.10](https://github.com/air-hand-org/jobdeck-job-worker/compare/v1.2.9...v1.2.10) (2026-11-09)
+
+
+### Bug Fixes
+
+* **deps:** update module cloud.google.com/go/pubsub/v2 to v2.8.1 ([#55](https://github.com/air-hand-org/jobdeck-job-worker/issues/55)) ([82fe058](https://github.com/air-hand-org/jobdeck-job-worker/commit/82fe058183db8f28b0a7eef535b3372bcfb22348))
+* **deps:** update module github.com/air-hand-org/api-contracts/packages/jobdeck/auth to v1.6.1 ([#42](https://github.com/air-hand-org/jobdeck-job-worker/issues/42)) ([6141c2c](https://github.com/air-hand-org/jobdeck-job-worker/commit/6141c2c75f26b0b1707b9547969a908b7229dc2e))
+* **deps:** update module github.com/air-hand-org/api-contracts/packages/jobdeck/job to v1.3.1 ([#47](https://github.com/air-hand-org/jobdeck-job-worker/issues/47)) ([fc50db2](https://github.com/air-hand-org/jobdeck-job-worker/commit/fc50db27398367a9000ac5af7242ccb3fac7334f))
+
 ## [1.2.9](https://github.com/air-hand-org/jobdeck-job-worker/compare/v1.2.8...v1.2.9) (2026-11-03)
 
 
