@@ -14,8 +14,8 @@ cloud.google.com/go/iam v1.14.0/go.mod h1:JTPZfbHdGXJrOYREtkRoFzCDGaBdbA7ILLKO/D
 cloud.google.com/go/pubsub/v2 v2.8.1 h1:DyLrbgccmcqbygvbfHXne9ukTynrKtgQsOBkM0GniSY=
 cloud.google.com/go/pubsub/v2 v2.8.1/go.mod h1:OaymNdZYwo89Xow5XC3unXn9VknMq/+AbLJO7dwRsdc=
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
-github.com/air-hand-org/api-contracts/packages/jobdeck/auth v1.4.1 h1:khZY0hKubpi/hZZDsnKCoFMf5dID6F2g6Aqs2sMob4I=
-github.com/air-hand-org/api-contracts/packages/jobdeck/auth v1.4.1/go.mod h1:4AIsQqlCQ6uRj+eFbqHKMUOVjUKL5yfdY3PjJPLTWhk=
+github.com/air-hand-org/api-contracts/packages/jobdeck/auth v1.6.1 h1:rXDF6EnZ8MUY8AGJp8bWWl7pPTlTaJJlA06Dd0RDpwg=
+github.com/air-hand-org/api-contracts/packages/jobdeck/auth v1.6.1/go.mod h1:FZcYfUbvOv05VNda/ZjM6p9WmhItnwwDxXFHRPrtu4c=
 github.com/air-hand-org/api-contracts/packages/jobdeck/job v1.3.1 h1:8CUCQLUDJoWwi/bxFcKJs29ph5MTC0MQzX5gCZEawRM=
 github.com/air-hand-org/api-contracts/packages/jobdeck/job v1.3.1/go.mod h1:6Vk4Xa8PFCFcv1e2B38ddPAy28ULszo264oAPhDuMx0=
 github.com/cenkalti/backoff/v5 v5.0.3 h1:ZN+IMa753KfX5hd8vVaMixjnqRZ3y8CuJKRKj1xcsSM=

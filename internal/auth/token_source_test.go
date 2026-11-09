@@ -12,6 +12,9 @@ import (
 )
 
 type authClientStub struct {
+	// Only AuthenticateLocalClient is expected; other RPCs panic on the nil client.
+	authv1.AuthServiceClient
+
 	responses []*authv1.AuthenticateLocalClientResponse
 	err       error
 	requests  []*authv1.AuthenticateLocalClientRequest
@@ -24,10 +27,6 @@ func (c *authClientStub) AuthenticateLocalClient(_ context.Context, req *authv1.
 	}
 	response := c.responses[len(c.requests)-1]
 	return response, nil
-}
-
-func (c *authClientStub) ExchangeGoogleIdToken(context.Context, *authv1.ExchangeGoogleIdTokenRequest, ...grpc.CallOption) (*authv1.ExchangeGoogleIdTokenResponse, error) {
-	return nil, nil
 }
 
 func TestCachedTokenSourceTokenCachesAndRefreshes(t *testing.T) {
