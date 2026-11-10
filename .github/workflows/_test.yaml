@@ -23,12 +23,12 @@ jobs:
           persist-credentials: false
           # Generate from the actual Renovate head, not its synthetic merge commit.
           ref: ${{ case(env.ARTIFACT_ELIGIBLE == 'true', github.event.pull_request.head.sha, github.sha) }}
-      - uses: air-hand-org/jobdeck-actions/actions/setup-tools@942a96db0ec375d908dd8a8fd97cefc6eaf9f734 # v1.7.2
-      - uses: air-hand-org/jobdeck-actions/actions/cache-go@942a96db0ec375d908dd8a8fd97cefc6eaf9f734 # v1.7.2
+      - uses: air-hand-org/jobdeck-actions/actions/setup-tools@56b5a3e5540b1a1d42a0dbd3ae45b48910f42e83 # v1.7.3
+      - uses: air-hand-org/jobdeck-actions/actions/cache-go@56b5a3e5540b1a1d42a0dbd3ae45b48910f42e83 # v1.7.3
       - name: build
         run: make build
       - name: update generated licenses
-        uses: air-hand-org/jobdeck-actions/actions/auto-commit@942a96db0ec375d908dd8a8fd97cefc6eaf9f734 # v1.7.2
+        uses: air-hand-org/jobdeck-actions/actions/auto-commit@56b5a3e5540b1a1d42a0dbd3ae45b48910f42e83 # v1.7.3
         with:
           eligible: ${{ env.ARTIFACT_ELIGIBLE }}
           paths: |
