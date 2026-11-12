@@ -2,7 +2,7 @@
 package app
 
 import (
-	jobv1 "github.com/air-hand-org/api-contracts/packages/jobdeck/job/go/proto/v1"
+	jobv1 "github.com/air-hand-org/api-contracts/packages/jobdeck/job/v2/go/proto/v1"
 	"go.opentelemetry.io/otel/trace"
 )
 
