@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.2.11](https://github.com/air-hand-org/jobdeck-job-worker/compare/v1.2.10...v1.2.11) (2026-11-14)
+
+
+### Bug Fixes
+
+* **deps:** update dependency go to v1.27.4 ([#64](https://github.com/air-hand-org/jobdeck-job-worker/issues/64)) ([e4e51a3](https://github.com/air-hand-org/jobdeck-job-worker/commit/e4e51a35bbc0250d85b5a97b10b4eb8dd07b25f4))
+* **deps:** update module cloud.google.com/go/pubsub/v2 to v2.9.0 ([#65](https://github.com/air-hand-org/jobdeck-job-worker/issues/65)) ([05214d4](https://github.com/air-hand-org/jobdeck-job-worker/commit/05214d4443898dc230b10c4980d206a856e2bf4d))
+* **deps:** update module golang.org/x/sync to v0.25.0 ([#59](https://github.com/air-hand-org/jobdeck-job-worker/issues/59)) ([b9c5c3e](https://github.com/air-hand-org/jobdeck-job-worker/commit/b9c5c3e274cb4a554fdd9d4c27757fb1f83f63a2))
+
 ## [1.2.10](https://github.com/air-hand-org/jobdeck-job-worker/compare/v1.2.9...v1.2.10) (2026-11-09)
 
 
