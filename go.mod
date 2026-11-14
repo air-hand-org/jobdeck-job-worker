@@ -6,7 +6,7 @@ go 1.27.4
 replace google.golang.org/genproto v0.0.0-20230410155749-daa745c078e1 => google.golang.org/genproto v0.0.0-20260630182238-925bb5da69e7
 
 require (
-	cloud.google.com/go/pubsub/v2 v2.8.1
+	cloud.google.com/go/pubsub/v2 v2.9.0
 	github.com/air-hand-org/api-contracts/packages/jobdeck/auth v1.6.1
 	github.com/air-hand-org/api-contracts/packages/jobdeck/job v1.3.1
 	github.com/cockroachdb/errors v1.14.0
