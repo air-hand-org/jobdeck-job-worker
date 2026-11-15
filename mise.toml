@@ -1,6 +1,6 @@
 [tools]
 go = "1.27.4"
-"go:github.com/nammn/go-licenses/v2" = "v2.0.0-20261013105856-260edf655cee"
+"go:github.com/nammn/go-licenses/v2" = "v2.0.0-20261112100153-bbc4f3dc8815"
 
 [env]
 GOWORK = "off"
