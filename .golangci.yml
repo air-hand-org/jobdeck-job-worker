@@ -5,6 +5,13 @@ linters:
     - govet
     - revive
     - testifylint
+    - gocognit
+    - gocyclo
+  settings:
+    gocognit:
+      min-complexity: 10
+    gocyclo:
+      min-complexity: 10
   exclusions:
     paths:
       - gen/
@@ -14,6 +21,22 @@ linters:
         linters:
           - govet
           - revive
+      # Allow only the existing diagnostic for each function, not later increases.
+      - path: ^cmd/worker/main\.go$
+        linters: [gocognit]
+        text: '^cognitive complexity 37 of func `main` is high \(> 10\)$'
+      - path: ^internal/reporter/reporter\.go$
+        linters: [gocognit]
+        text: '^cognitive complexity 12 of func `\(\*Reporter\)\.Run` is high \(> 10\)$'
+      - path: ^internal/worker/worker\.go$
+        linters: [gocognit]
+        text: '^cognitive complexity 26 of func `\(Worker\)\.Run` is high \(> 10\)$'
+      - path: ^cmd/worker/main\.go$
+        linters: [gocyclo]
+        text: '^cyclomatic complexity 18 of func `main` is high \(> 10\)$'
+      - path: ^internal/worker/worker\.go$
+        linters: [gocyclo]
+        text: '^cyclomatic complexity 12 of func `\(Worker\)\.Run` is high \(> 10\)$'
 
 formatters:
   enable:
